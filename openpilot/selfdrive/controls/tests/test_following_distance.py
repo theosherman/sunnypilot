@@ -13,6 +13,14 @@ def desired_follow_distance(v_ego, v_lead, t_follow=None):
     t_follow = get_T_FOLLOW()
   return get_safe_obstacle_distance(v_ego, t_follow) - get_stopped_equivalence_factor(v_lead)
 
+
+def test_theo_following_profile():
+  assert get_T_FOLLOW(log.LongitudinalPersonality.relaxed) == pytest.approx(1.75 / 3.0)
+  assert get_T_FOLLOW(log.LongitudinalPersonality.standard) == pytest.approx(1.45 / 3.0)
+  assert get_T_FOLLOW(log.LongitudinalPersonality.aggressive) == pytest.approx(1.25 / 3.0)
+  assert desired_follow_distance(0.0, 0.0) == pytest.approx(6.0 / 3.0)
+
+
 def run_following_distance_simulation(v_lead, t_end=100.0, e2e=False, personality=0):
   man = Maneuver(
     '',
