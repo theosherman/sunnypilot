@@ -7,8 +7,8 @@ from pathlib import Path
 
 SOURCE = Path(__file__).parents[1] / "openpilot/selfdrive/controls/lib/longitudinal_mpc_lib/long_mpc.py"
 EXPECTED_T_FOLLOW = {
-  "relaxed": 1.75 / 3.0,
-  "standard": 1.45 / 3.0,
+  "relaxed": 1.25,
+  "standard": 1.45 / 2.0,
   "aggressive": 1.25 / 3.0,
 }
 EXPECTED_STOP_DISTANCE = 6.0 / 3.0

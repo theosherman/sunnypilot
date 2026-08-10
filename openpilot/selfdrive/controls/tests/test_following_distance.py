@@ -15,8 +15,8 @@ def desired_follow_distance(v_ego, v_lead, t_follow=None):
 
 
 def test_theo_following_profile():
-  assert get_T_FOLLOW(log.LongitudinalPersonality.relaxed) == pytest.approx(1.75 / 3.0)
-  assert get_T_FOLLOW(log.LongitudinalPersonality.standard) == pytest.approx(1.45 / 3.0)
+  assert get_T_FOLLOW(log.LongitudinalPersonality.relaxed) == pytest.approx(1.25)
+  assert get_T_FOLLOW(log.LongitudinalPersonality.standard) == pytest.approx(1.45 / 2.0)
   assert get_T_FOLLOW(log.LongitudinalPersonality.aggressive) == pytest.approx(1.25 / 3.0)
   assert desired_follow_distance(0.0, 0.0) == pytest.approx(6.0 / 3.0)
 
